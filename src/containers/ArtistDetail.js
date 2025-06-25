@@ -54,6 +54,11 @@ const ArtistDetail = () => {
             <img className='artist-img' src={artist.image} />
         </div>
 
+        <div className='artist-events-block'>
+            {/* Events */}
+            {artist.events && <ArtistEventsList events={artist.events} />}
+        </div>
+
         <div className='artist-details-block'>
             {/* Quote */}
             <div className='artist-quote'>"{artist.quote}"</div>
@@ -61,10 +66,7 @@ const ArtistDetail = () => {
             <div className='artist-description'>{artist.description}</div>
         </div>
 
-        <div className='slider'>
-            {/* Events */}
-            {artist.events && <ArtistEventsList events={artist.events} />}
-        </div>
+
     </div>
   );
 };
