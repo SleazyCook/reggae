@@ -205,26 +205,13 @@ const ArtistEventsList = ({ events }) => {
 
   if (!events?.length) return <p>No events for this artist.</p>;
 
-  const sliderStyle = {
-    display: 'flex',
-    overflowX: 'auto',
-    gap: '1rem',
-    paddingBottom: '1rem',
-  };
-
-  const cardStyle = {
-    flex: '0 0 auto',
-    width: '120px',
-    textAlign: 'center',
-  };
-
   return (
     <div>
       <h3>Upcoming Events</h3>
       {upcomingEvents.length === 0 && <p>No upcoming events.</p>}
-      <div style={sliderStyle}>
+      <div className='artist-event-slider'>
         {upcomingEvents.map((event, i) => (
-          <div key={i} style={cardStyle}>
+          <div key={i} >
             {event.id ? (
               <Link to={`/events/${event.id}`}>
                 {event.flyer && (
@@ -232,7 +219,6 @@ const ArtistEventsList = ({ events }) => {
                     className="artist-event-flyer"
                     src={event.flyer}
                     alt={event.name}
-                    style={{ width: '100%' }}
                   />
                 )}
               </Link>
@@ -245,9 +231,9 @@ const ArtistEventsList = ({ events }) => {
 
       <h3>Past Events</h3>
       {pastEvents.length === 0 && <p>No past events.</p>}
-      <div style={sliderStyle}>
+      <div className='artist-event-slider'>
         {pastEvents.map((event, i) => (
-          <div key={i} style={cardStyle}>
+          <div key={i} >
             {event.id ? (
               <Link to={`/events/${event.id}`}>
                 {event.flyer && (
@@ -255,7 +241,6 @@ const ArtistEventsList = ({ events }) => {
                     className="artist-event-flyer"
                     src={event.flyer}
                     alt={event.name}
-                    style={{ width: '100%' }}
                   />
                 )}
               </Link>

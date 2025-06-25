@@ -40,31 +40,51 @@ const ArtistDetail = () => {
 
   return (
     <div className='artist-details page'>
-        <div className='artist-name-block'>
-            {/* Name */}
-            <div className='artist-name'>
-                {artist.name}
-            </div>
-            {/* Nationality */}
-            <ArtistFlag nationality={artist.nationality} />
-            {/* Socials */}
-            <SocialLinks social={artist.social} />
+        <img   
+            className="image-blurred-edge"
+            style={{backgroundImage: `url(${artist.banner})`}} 
+            src={artist.banner} />
 
+
+        <div className='artist-left-block'>
             {/* Image */}
             <img className='artist-img' src={artist.image} />
+
+            {/* Nationality */}
+            <span className='artist-label'>nationality</span>
+            <ArtistFlag nationality={artist.nationality} />
         </div>
 
-        <div className='artist-events-block'>
-            {/* Events */}
-            {artist.events && <ArtistEventsList events={artist.events} />}
+        <div className='artist-right-block'>
+            <div className='artist-name-flexbox'>
+                <div className='artist-name-block'>
+                    {/* Artist Type */}
+                    <div className='artist-type'>
+                        {artist.type}
+                    </div>
+                    {/* Name */}
+                    <div className='artist-name'>
+                        {artist.name}
+                    </div>
+                </div>
+                {/* Socials */}
+                <SocialLinks social={artist.social} />
+            </div>
+
+            {/* Quote
+            <div className='artist-quote'>"{artist.quote}"</div> */}
+            {/* Description */}
+            <div className='artist-description'>
+                <span className='artist-label'>Bio</span>
+                {artist.description}</div>
         </div>
 
         <div className='artist-details-block'>
-            {/* Quote */}
-            <div className='artist-quote'>"{artist.quote}"</div>
-            {/* Description */}
-            <div className='artist-description'>{artist.description}</div>
+
         </div>
+
+                    {/* Events */}
+            {artist.events && <ArtistEventsList events={artist.events} />}
 
 
     </div>
