@@ -206,8 +206,8 @@ const ArtistEventsList = ({ events }) => {
   if (!events?.length) return <p>No events for this artist.</p>;
 
   return (
-    <div>
-      <h3>Upcoming Events</h3>
+    <div className='artist-events'>
+      <h3 className='artist-events-header'>Upcoming Events</h3>
       {upcomingEvents.length === 0 && <p>No upcoming events.</p>}
       <div className='artist-event-slider'>
         {upcomingEvents.map((event, i) => (
@@ -229,7 +229,7 @@ const ArtistEventsList = ({ events }) => {
         ))}
       </div>
 
-      <h3>Past Events</h3>
+      <h3 className='artist-events-header'>Past Events</h3>
       {pastEvents.length === 0 && <p>No past events.</p>}
       <div className='artist-event-slider'>
         {pastEvents.map((event, i) => (

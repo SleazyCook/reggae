@@ -12,6 +12,7 @@ const countryCodeMap = {
   'South Africa': 'za',
   Japan: 'jp',
   Brazil: 'br',
+  Jamaica: 'jm'  
   // Add more as needed
 };
 

@@ -3,19 +3,27 @@
     flex-wrap: wrap;
     gap: 1rem;
     position: relative;
-    padding-top: 13rem;
+    padding-top: 2rem;
 
     background-color: black;
     color: white;
+
+    justify-content: center;
 }
 
 /* flexbox for desktop */
 @media (min-width: 800px) {
+    .artist-details {
+        padding-top: 13rem;
+    }
+
     .artist-pic-block,
     .artist-events-block {
         flex: 1 1 45%;
         min-width: 200px;
     }
+
+
 }
 
 .image-blurred-edge {
@@ -26,6 +34,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
 
     /* Stronger blurred edge mask */
     -webkit-mask-image: radial-gradient(
@@ -56,6 +65,8 @@
     margin-top: 1rem;
     margin-bottom: .5rem;
     text-transform: uppercase;
+    font-family: var(--font-label);
+    font-size: 1.25rem;
 }
 
 
@@ -83,16 +94,28 @@
     .artist-details-block {
         padding: 0 5rem;
     }
+
+    .image-blurred-edge {
+        display: block;
+    }
 }
 
 .artist-name-flexbox {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+    flex-direction: column;
+}
+
+@media (min-width: 800px) {
+    .artist-name-flexbox {
+        flex-direction: row;
+    }
 }
 
 .artist-name {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: var(--font-title);
 }
 
 .artist-nationality {
@@ -128,6 +151,7 @@
     display: block;
     border-radius: 50%;   /* Makes it a circle */
     max-width: 100%;
+    margin-bottom: 1rem;
 }
 
 
@@ -138,12 +162,26 @@
 }
 
 .artist-description {
-
+    text-align: justify;
 }
 
 .artist-description span {
     display: block;
     margin-bottom: .5rem;
+}
+
+.artist-events {
+    min-width: 350px;
+}
+
+.artist-events-header {
+    text-align: center;
+}
+
+@media (min-width: 800px) {
+    .artist-events {
+        min-width: 700px;
+    }
 }
 
 .artist-event-slider {

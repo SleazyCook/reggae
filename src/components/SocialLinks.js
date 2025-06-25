@@ -1,4 +1,4 @@
-import { FaInstagram, FaXTwitter, FaFacebook, FaTiktok, FaLink, FaSoundcloud, FaYoutube } from 'react-icons/fa6'; // or any icon lib
+import { FaInstagram, FaXTwitter, FaFacebook, FaTiktok, FaLink, FaSoundcloud, FaYoutube, FaSpotify } from 'react-icons/fa6'; // or any icon lib
 
 const SocialLinks = ({ social }) => {
   if (!social) return null;
@@ -11,11 +11,20 @@ const SocialLinks = ({ social }) => {
     tiktok: <FaTiktok />,
     soundcloud: <FaSoundcloud />,
     youtube: <FaYoutube />,
+    spotify: <FaSpotify />
   };
+
+  const orderedSocials = Object.keys(social)
+    .sort() // alphabetize keys
+    .reduce((acc, key) => {
+    acc[key] = social[key];
+    return acc;
+  }, {});
+
 
   return (
     <div className="artist-social-links">
-      {Object.entries(social).map(([platform, url]) => (
+      {Object.entries(orderedSocials).map(([platform, url]) => (
         <a
           key={platform}
           href={url}

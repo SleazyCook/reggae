@@ -51,7 +51,7 @@ const ArtistDetail = () => {
             <img className='artist-img' src={artist.image} />
 
             {/* Nationality */}
-            <span className='artist-label'>nationality</span>
+            {/* <span className='artist-label'>nationality</span> */}
             <ArtistFlag nationality={artist.nationality} />
         </div>
 
@@ -59,7 +59,7 @@ const ArtistDetail = () => {
             <div className='artist-name-flexbox'>
                 <div className='artist-name-block'>
                     {/* Artist Type */}
-                    <div className='artist-type'>
+                    <div className='artist-label' style={{marginBottom:0}}>
                         {artist.type}
                     </div>
                     {/* Name */}
@@ -76,15 +76,12 @@ const ArtistDetail = () => {
             {/* Description */}
             <div className='artist-description'>
                 <span className='artist-label'>Bio</span>
-                {artist.description}</div>
+                {artist.bio}</div>
         </div>
 
-        <div className='artist-details-block'>
 
-        </div>
-
-                    {/* Events */}
-            {artist.events && <ArtistEventsList events={artist.events} />}
+        {/* Events */}
+        {artist.events && <ArtistEventsList events={artist.events} />}
 
 
     </div>
