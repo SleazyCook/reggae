@@ -3,7 +3,10 @@
 }
 
 .artist-listing-container {
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .artist-listing-card {
@@ -15,13 +18,18 @@
     margin: .25rem;
     transition: all .3s;
     cursor: pointer;
+    margin-bottom: 1.25rem;
 }
 
-
+.artist-listing-card:nth-child(odd) {
+    margin-right: 1.25rem;
+}
 
 .artist-listing-card img {
     width: 140px;         
-    height: 140px;        
+    height: 140px;   
+    min-width: 140px;         
+    min-height: 140px;        
     object-fit: cover;    
     display: block;
     max-width: 100%;
