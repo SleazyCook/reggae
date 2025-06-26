@@ -32,5 +32,11 @@ body {
     margin: 0 auto;
     background-color: black;
     color: white;
-    padding: 2rem;
+    padding: 1rem;
+}
+
+@media (min-width: 800px) {
+    .page {
+        padding: 2rem;
+    }
 }
