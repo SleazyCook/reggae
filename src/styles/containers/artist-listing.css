@@ -20,8 +20,8 @@
 
 
 .artist-listing-card img {
-    width: 160px;         
-    height: 160px;        
+    width: 140px;         
+    height: 140px;        
     object-fit: cover;    
     display: block;
     max-width: 100%;
