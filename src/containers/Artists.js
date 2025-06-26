@@ -29,18 +29,25 @@ const Artists = () => {
 
   if (loading) return <p>Loading artists...</p>;
 
+    function sortArtistsByName(artists) {
+        return [...artists].sort((a, b) =>
+            a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
+        );
+    }
+    const sortedArtists = sortArtistsByName(artists);
+
+
   return (
-    <div className='artist-detail'>
+    <div className='artist-listing page'>
         <h2>Artists</h2>
-        <ul>
-            {artists.map(artist => (
-                <li key={artist.id}>
-                    <Link to={`/artists/${artist.id}`}>
-                        {artist.name || 'Unnamed Artist'}
-                    </Link>
-                </li>
+        <div className='artist-listing-container'>
+            {sortedArtists.map(artist => (
+                <Link to={`/artists/${artist.id}`} key={artist.id} className='artist-listing-card'>
+                    <img src={artist.image} />
+                    <span>{artist.name || 'Unnamed Artist'}</span>
+                </Link>
             ))}
-        </ul>
+        </div>
 
 
 

@@ -1,0 +1,40 @@
+.artist-listing {
+
+}
+
+.artist-listing-container {
+    
+}
+
+.artist-listing-card {
+    all: unset;
+    display: inline-block;
+    padding: .25rem;
+    border-radius: 1rem;
+    background-color: gray;
+    margin: .25rem;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+@media (min-width: 800px) {
+    .artist-listing-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.artist-listing-card img {
+    width: 180px;         
+    height: 180px;        
+    object-fit: cover;    
+    display: block;
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.artist-listing-card span {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+}

@@ -23,12 +23,14 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    background-color: gray;
 }
 
 
 .page {
     max-width: 800px;
     margin: 0 auto;
-    background-color: gray;
+    background-color: black;
+    color: white;
     padding: 2rem;
 }
