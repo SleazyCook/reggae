@@ -4,6 +4,7 @@
     gap: 1rem;
     position: relative;
     padding-top: 2rem;
+
     justify-content: center;
 }
 
@@ -133,15 +134,19 @@
 .artist-social-links {
     color: white;
     margin: .5rem 0;
-    padding: .5rem 0;
+    padding: .5rem 2rem;
     text-align: center;
     line-height: 1rem;
+    display: flex; 
+    justify-content: center;
+    gap: 1rem;
+    
 }
 
 .artist-social-links a {
     color: white;
     font-size: 1.25rem;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
 }
 
 .artist-img {
@@ -181,6 +186,12 @@
 @media (min-width: 800px) {
     .artist-events {
         min-width: 700px;
+    }
+
+
+    .artist-social-links {
+        min-width: 150px;
+        align-items: end;
     }
 }
 
